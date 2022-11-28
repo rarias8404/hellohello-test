@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import { styled } from "@mui/material";
+import FormWrapper from "./components/form-wrapper/FormWrapper";
+
+const CustomContainer = styled(Container)({
+  backgroundColor: "#F9FAFB",
+  height: "100vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
+const BoxContainer = styled(Box)({
+  display: "flex",
+  width: "70%",
+  height: "70%",
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CustomContainer>
+      <BoxContainer>
+        <FormWrapper />
+      </BoxContainer>
+    </CustomContainer>
   );
 }
 

@@ -9,7 +9,7 @@ const BoxOption = styled(Box)({
   display: "flex",
   alignItems: "center",
   gap: 16,
-  boxShadow: "0px 8px 16px rgba(86, 80, 76, 0.14)",
+  boxShadow: "0px 8px 16px rgba(86, 80, 76, 0.04)",
   cursor: "pointer",
 });
 
@@ -26,13 +26,12 @@ const Option = ({ value, label, image, selected = false, onSelect }) => {
   return (
     <BoxOption
       sx={{ border: selected ? "2px solid #EC7000" : "inherit" }}
+      mb={2}
       onClick={handleSelect}
     >
       <Box display="flex" alignItems="center" gap={1} width="85%">
         <Img src={image} alt="option" />
-        <Typography variant="body2" color="text.secondary">
-          {label}
-        </Typography>
+        <Typography variant="body2">{label}</Typography>
       </Box>
       <img src={ArrowIcon} alt="arrow" />
     </BoxOption>

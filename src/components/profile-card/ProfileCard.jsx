@@ -14,6 +14,7 @@ import IconCard from "../../assets/icon-card.svg";
 
 const CustomCardContent = styled(CardContent)({
   position: "relative",
+  backgroundColor: "#F9FAFB",
 });
 
 const CustomCardActions = styled(CardActions)({
@@ -24,6 +25,8 @@ const CustomCardActions = styled(CardActions)({
 const CustomButton = styled(Button)({
   textTransform: "inherit",
   width: "95%",
+  color: "#106EB0",
+  marginBottom: "20px",
 });
 
 const HomeAvatar = styled(Box)({
@@ -36,13 +39,13 @@ const HomeAvatar = styled(Box)({
   width: "64px",
   borderRadius: "50%",
   backgroundColor: "#fff",
-  boxShadow: "0px 1px 4px rgba(86, 80, 76, 0.14)",
+  boxShadow: "0px 1px 4px rgba(86, 80, 76, 0.04)",
 });
 
 const ProfileCard = () => {
   return (
     <Card
-      sx={{ maxWidth: 370, boxShadow: "0px 2px 16px rgba(86, 80, 76, 0.14)" }}
+      sx={{ maxWidth: 370, boxShadow: "0px 2px 16px rgba(86, 80, 76, 0.04)" }}
     >
       <CardMedia component="img" image={UserAvatar} alt="user" />
       <CustomCardContent>
@@ -50,10 +53,16 @@ const ProfileCard = () => {
           <img src={IconHome} alt="Home" />
         </HomeAvatar>
         <Box mt={4}>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            fontSize="20px"
+            fontWeight={700}
+          >
             Lorem ipsum dolor
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" fontWeight={400}>
             Lobortis dolore aliquyam ut ipsum no amet sanctus duo magna ut et
           </Typography>
           <Box pt={1} display="flex" gap={1} alignItems="center">

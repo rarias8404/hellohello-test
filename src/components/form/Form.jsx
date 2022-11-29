@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
-import Grid from "@mui/material/Grid";
 import OptionsContainer from "../options-container/OptionsContainer";
 import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
@@ -88,7 +87,9 @@ const Form = () => {
     }
   };
 
-  const handleSelect = (value) => setSelectedOption(value);
+  const handleSelect = useCallback((value) => {
+    setSelectedOption(value);
+  }, []);
 
   const handleClick = () => {
     if (step === 1) {
@@ -101,10 +102,8 @@ const Form = () => {
   };
 
   return (
-    <>
-      <Grid item xs={12}>
-        <FormHeader step={step} />
-      </Grid>
+    <Box display="flex" flexDirection="column" width="390px">
+      <FormHeader step={step} />
       {loading ? (
         <OptionsContainerSkeleton />
       ) : (
@@ -119,9 +118,7 @@ const Form = () => {
           )}
           {step === 1 && (
             <FormControl fullWidth>
-              <FormLabel htmlFor="email" sx={{ marginBottom: 2 }}>
-                Correo electrónico
-              </FormLabel>
+              <FormLabel htmlFor="email">Correo electrónico</FormLabel>
               <EmailTextField
                 value={email}
                 id="email"
@@ -137,18 +134,20 @@ const Form = () => {
           )}
         </>
       )}
-      <Grid item xs={12} display="flex" justifyContent="flex-end" mt={1}>
-        <Box>
-          <NextButton
-            variant="contained"
-            disabled={(loading || !selectedOption) && step !== 2}
-            onClick={handleClick}
-          >
-            {step === 0 ? "siguiente" : step === 1 ? "enviar" : "volver"}
-          </NextButton>
-        </Box>
-      </Grid>
-    </>
+      <Box
+        display="flex"
+        justifyContent="flex-end"
+        mt={step === 2 ? 0 : "44px"}
+      >
+        <NextButton
+          variant="contained"
+          disabled={(loading || !selectedOption) && step !== 2}
+          onClick={handleClick}
+        >
+          {step === 0 ? "siguiente" : step === 1 ? "enviar" : "volver"}
+        </NextButton>
+      </Box>
+    </Box>
   );
 };
 

@@ -118,7 +118,12 @@ const Form = () => {
           )}
           {step === 1 && (
             <FormControl fullWidth>
-              <FormLabel htmlFor="email">Correo electrónico</FormLabel>
+              <FormLabel
+                htmlFor="email"
+                sx={{ color: "text.primary", marginBottom: "5px" }}
+              >
+                Correo electrónico
+              </FormLabel>
               <EmailTextField
                 value={email}
                 id="email"

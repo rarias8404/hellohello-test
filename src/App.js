@@ -12,6 +12,12 @@ const theme = createTheme({
       color: "#252220",
     },
   },
+  palette: {
+    text: {
+      primary: "#5D5750",
+      secondary: "#89837F",
+    },
+  },
 });
 
 const CustomContainer = styled(Container)({
@@ -19,6 +25,7 @@ const CustomContainer = styled(Container)({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  paddingTop: "100px",
 });
 
 const BoxContainer = styled(Box)({
@@ -30,7 +37,7 @@ const BoxContainer = styled(Box)({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <CustomContainer sx={{ paddingTop: "100px" }}>
+      <CustomContainer>
         <BoxContainer>
           <FormWrapper />
         </BoxContainer>

@@ -26,7 +26,7 @@ const CustomButton = styled(Button)({
   textTransform: "inherit",
   width: "95%",
   color: "#106EB0",
-  marginBottom: "20px",
+  marginBottom: "15px",
 });
 
 const HomeAvatar = styled(Box)({
@@ -34,9 +34,9 @@ const HomeAvatar = styled(Box)({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  top: "-30px",
-  height: "64px",
-  width: "64px",
+  top: "-25px",
+  height: "50px",
+  width: "50px",
   borderRadius: "50%",
   backgroundColor: "#fff",
   boxShadow: "0px 1px 4px rgba(86, 80, 76, 0.04)",
